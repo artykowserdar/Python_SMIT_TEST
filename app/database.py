@@ -9,7 +9,7 @@ DB_POOL_SIZE = int(os.getenv("DB_POOL_SIZE", "500"))
 WEB_CONCURRENCY = int(os.getenv("WEB_CONCURRENCY", "8"))
 POOL_SIZE = max(DB_POOL_SIZE // WEB_CONCURRENCY, 5)
 
-engine = create_engine("postgresql://smit:Smit123.@localhost/db_smit",
+engine = create_engine("postgresql://smit:Smit123.@localhost:5433/db_smit",
                        client_encoding='utf8',
                        pool_pre_ping=True,
                        pool_size=POOL_SIZE,
